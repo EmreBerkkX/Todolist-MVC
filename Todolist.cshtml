@@ -1,0 +1,24 @@
+@model _1.Models.TodoViewModel
+
+@{
+    ViewData["Title"] = "Todolist";
+}
+<h1>@ViewData["Title"]</h1>
+   <div class="row bg-danger p-5">
+            <div class="col-10">
+                <input type="text" class="form-control" placeholder="Başlık" id="txtTitle">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success" id="btnAdd">Ekle</button>
+            </div>
+        </div>
+         <div class="row">
+           <ul class="list-group mt-5" id="list">
+      @foreach (var item in Model.Todos!)
+                {
+                    <li class='list-group-item 
+                    @(item.Iscomplated==1?"list-group-item-success m-1":"list-group-item-danger m-1 text-decoration-line-through")'>  @item.Title   <button class="btn-close float-end"></button></li>
+                }
+        </div>
+
+<p>Websitemizin Todolist işlemleri</p>

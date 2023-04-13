@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+@{await Html.RenderPartialAsync ("_Head");}
+
+
+<body>
+@{await Html.RenderPartialAsync ("_Header");}
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <p>Dinamik alan burda başlar.</p>
+            @RenderBody()
+            <p>Dinamik alan biter.</p>
+        </main>
+    </div>
+
+@{await Html.RenderPartialAsync ("_Footer");}
+    
+@{await Html.RenderPartialAsync ("_Scripts");}
+    @await RenderSectionAsync("Scripts", required: false)
+
+    
+</body>
+</html>
